@@ -27,5 +27,8 @@
 
     <color name="photo_placeholder">#FFF7DA</color>
 
-    <color name="ltgray">#ffe0e0e0</color>
+    <color name="light_gray">#ffe0e0e0</color>
+
+    <!-- background color for white text -->
+    <color name="transparent_black">#7f000000</color>
 </resources>
