@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.LoaderManager;
@@ -76,6 +77,12 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
                 mSelectedItemId = mStartId;
             }
         }
+
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
     }
 
     @Override

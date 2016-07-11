@@ -18,18 +18,31 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/primary_color</item>
         <item name="colorPrimaryDark">@color/primary_dark_color</item>
         <item name="colorAccent">@color/accent_color</item>
     </style>
 
-    <style name="Theme.Bacon" parent="AppTheme">
-
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/primary_dark_color</item>
+        <item name="colorAccent">@color/accent_color</item>
     </style>
 
-    <style name="Theme.Bacon.Detail" parent="AppTheme">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <!-- Detail activity theme. -->
+    <style name="Theme.XYZReader.Detail" parent="AppTheme.NoActionBar">
+    </style>
+
+    <!-- Main activity theme. -->
+    <style name="Theme.XYZReader" parent="AppTheme">
+        <item name="actionBarStyle">@style/ActionBar.Solid.XYZReader.NoTitle</item>
+    </style>
+
+    <!-- main activity action bar styles -->
+    <style name="ActionBar.Solid.XYZReader.NoTitle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="displayOptions">useLogo|showHome</item>
+        <item name="logo">@drawable/logo</item>
     </style>
 
 </resources>
