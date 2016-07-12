@@ -17,13 +17,13 @@
 
 <resources>
     <!-- Primary color of the app (shown in the app bar) -->
-    <color name="primary_color">#009688</color>
+    <color name="teal_500">#009688</color>
 
     <!-- Primary dark color of the app (shown in the status bar) -->
-    <color name="primary_dark_color">#004d40</color>
+    <color name="teal_900">#004d40</color>
 
     <!-- Accent color of the app -->
-    <color name="accent_color">#ffab00</color>
+    <color name="amber_a700">#ffab00</color>
 
     <color name="photo_placeholder">#FFF7DA</color>
 
