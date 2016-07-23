@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.Intent;
@@ -52,6 +53,7 @@ public class ArticleDetailFragment extends Fragment implements
     private int mMutedColor = 0xFF333333;
 
     private ImageView mPhotoView;
+    private Typeface rosario;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -129,6 +131,12 @@ public class ArticleDetailFragment extends Fragment implements
         }
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        rosario = Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf");
+    }
+
     private void bindViews() {
         if (mRootView == null) {
             return;
@@ -138,7 +146,7 @@ public class ArticleDetailFragment extends Fragment implements
         TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
         bylineView.setMovementMethod(new LinkMovementMethod());
         TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
-        bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
+        bodyView.setTypeface(rosario);
 
         if (mCursor != null) {
             mRootView.setAlpha(0);
@@ -154,6 +162,7 @@ public class ArticleDetailFragment extends Fragment implements
                             + mCursor.getString(ArticleLoader.Query.AUTHOR)
                             + "</font>"));
             bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY)));
+
 
             Picasso.with(getActivity()).load(mCursor.getString(ArticleLoader.Query.PHOTO_URL)).into(mPhotoView, new com.squareup.picasso.Callback() {
                 @Override
