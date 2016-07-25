@@ -19,15 +19,15 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/teal_500</item>
-        <item name="colorPrimaryDark">@color/teal_900</item>
-        <item name="colorAccent">@color/amber_a700</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/teal_500</item>
-        <item name="colorPrimaryDark">@color/teal_900</item>
-        <item name="colorAccent">@color/amber_a700</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
     </style>
 
     <!-- Detail activity theme. -->

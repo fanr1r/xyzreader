@@ -16,21 +16,9 @@
 -->
 
 <resources>
-    <!-- Primary color of the app (shown in the app bar) -->
-    <color name="primary">#FD5621</color>
 
-    <!-- Primary dark color of the app (shown in the status bar) -->
-    <color name="primary_dark">#B0330C</color>
+    <!-- Detail activity theme. -->
+    <style name="Theme.XYZReader.Detail" parent="Theme.AppCompat.Dialog">
+    </style>
 
-    <!-- Accent color of the app -->
-    <color name="accent">#00B084</color>
-
-    <color name="photo_placeholder">#FFF7DA</color>
-
-    <color name="light_gray">#ffe0e0e0</color>
-
-    <color name="dark_gray">#333</color>
-
-    <!-- background color for white text -->
-    <color name="transparent_black">#7f000000</color>
 </resources>
