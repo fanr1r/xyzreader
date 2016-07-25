@@ -4,9 +4,14 @@ package com.example.xyzreader.ui;
  * Created by Eisdrachl on 24.07.2016.
  */
 
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Build;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
@@ -54,8 +59,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mContext.startActivity(new Intent(Intent.ACTION_VIEW,
-                        ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                Intent intent = new Intent(mContext, ArticleDetailActivity.class);
+                intent.setData(ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
+                Bundle bundle = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    bundle = ActivityOptions.makeSceneTransitionAnimation(
+                            (Activity) mContext,
+                            vh.thumbnailView,
+                            vh.thumbnailView.getTransitionName()).toBundle();
+                }
+                if (intent.resolveActivity(mContext.getPackageManager()) != null) {
+                    mContext.startActivity(intent, bundle);
+                }
             }
         });
         return vh;
